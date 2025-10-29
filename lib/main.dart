@@ -67,6 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  int num = 0;
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -75,6 +77,47 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: Center(
+          child: Text("Demo", style: TextStyle(color: Colors.white)),
+        ),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        spacing: 25,
+        children: [
+          Center(
+            child: Text(
+              "Number of donuts eaten today: $num",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                num = 0;
+              });
+            },
+            child: Text("Reset", style: TextStyle(color: Colors.white)),
+            style: ButtonStyle(
+              backgroundColor: WidgetStatePropertyAll(Colors.red),
+              foregroundColor: WidgetStatePropertyAll(Colors.white),
+            ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            num++;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.red,
+        foregroundColor: Colors.white,
+      ),
+    );
   }
 }
