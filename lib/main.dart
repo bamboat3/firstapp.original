@@ -54,21 +54,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  int num = 0;
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -77,47 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: Center(
-          child: Text("Demo", style: TextStyle(color: Colors.white)),
-        ),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        spacing: 25,
-        children: [
-          Center(
-            child: Text(
-              "Number of donuts eaten today: $num",
-              style: TextStyle(fontSize: 20),
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              setState(() {
-                num = 0;
-              });
-            },
-            child: Text("Reset", style: TextStyle(color: Colors.white)),
-            style: ButtonStyle(
-              backgroundColor: WidgetStatePropertyAll(Colors.red),
-              foregroundColor: WidgetStatePropertyAll(Colors.white),
-            ),
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            num++;
-          });
-        },
-        child: Icon(Icons.add),
-        backgroundColor: Colors.red,
-        foregroundColor: Colors.white,
-      ),
-    );
+    return Scaffold();
   }
 }
